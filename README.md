@@ -5,6 +5,8 @@ This repository will contain code about my malware development learning process
 ---
 ## Compilation
 You will need Mingw to cross-compile from Linux:
+
+
 **Debian / Ubuntu / Mint:**
 ```bash
 sudo apt update
