@@ -1,7 +1,7 @@
-Process Injection
----
-The most basic type of injection. Allocates a RWX memory page, writtes the shellcode onto it, and executes it via a new thread.
+## Process Injection
 
+The most basic type of injection. Allocates a RWX memory page, writes the shellcode onto it, and executes it via a new thread.
+```
   [ Current Process ]
 
   1. VirtualAlloc          2. WriteProcessMemory
@@ -34,3 +34,10 @@ The most basic type of injection. Allocates a RWX memory page, writtes the shell
   |  Wait until | <------- |  shellcode           |
   |  thread ends|          |  [!] PAYLOAD RUNS    |
   +-------------+          +---------------------+
+
+  Detection Indicators (IoCs)
+  ---------------------------
+  [!] RWX memory allocation        (very noisy)
+  [!] WriteProcessMemory on self    (suspicious)
+  [!] CreateThread on alloc'd mem   (flagged by EDRs)
+```
