@@ -23,4 +23,7 @@ sudo dnf install mingw64-gcc mingw64-gcc-c++
 
 ### Compiling the PoCs
 Example with `process_injection.c`
+```bash
 x86_64-w64-mingw32-gcc process_injection.c -o pi.exe -lkernel32
+
+```
